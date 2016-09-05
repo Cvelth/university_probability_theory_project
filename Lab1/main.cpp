@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 // Testing main
 int main()
 {
-	BinaryNumber a { 0b1010,0b0000,0b1111,0b1010 };
-	std::string s = a.print();
+	BinaryNumber a { 123,15,17,89 }, b { 19,15,88,20,99 };
+	BinaryNumber c = a + b;
 
 	return 0;
 }

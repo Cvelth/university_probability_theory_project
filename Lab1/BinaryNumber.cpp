@@ -1,5 +1,15 @@
 #include "BinaryNumber.h"
 
+void BinaryNumber::add(uint64_t num)
+{
+	while (num >= MAXIMUM_PER_NUMBER) 
+	{
+		data.push_back(num % MAXIMUM_PER_NUMBER);
+		num /= MAXIMUM_PER_NUMBER;
+	}
+	data.push_back(num);
+}
+
 BinaryNumber BinaryNumber::complement(BinaryNumber b)
 {
 	if (data.size() >= b.data.size())
@@ -19,27 +29,40 @@ std::string BinaryNumber::cutZeros(std::string s)
 	return res;
 }
 
-/*Unused
-std::string BinaryNumber::invert(std::string s)
-{
-	std::string res;
-	for (int i = s.size() - 1; i >= 0; i--)
-		res += s[i];
-	return res;
-}
-*/
 BinaryNumber::BinaryNumber() : data(0)
 {
 }
 
-BinaryNumber::BinaryNumber(uint64_t num) : data(num)
+BinaryNumber::BinaryNumber(uint64_t num)
 {
+	if (num != 0)
+		add(num);
 }
 
 BinaryNumber::BinaryNumber(std::initializer_list<uint64_t> list)
 {
+	uint64_t trans = 0;
 	for each (auto var in list)
-		data.push_front(var);
+	{
+		if ((var += trans) > MAXIMUM_PER_NUMBER)
+		{
+			data.push_back(var % MAXIMUM_PER_NUMBER);
+			trans = var / MAXIMUM_PER_NUMBER;
+		}
+		else
+		{
+			data.push_back(var);
+			trans = 0;
+		}
+	}
+	if (trans != 0)
+		add(trans);
+}
+
+BinaryNumber BinaryNumber::operator=(BinaryNumber n)
+{
+	data = n.data;
+	return *this;
 }
 
 BinaryNumber BinaryNumber::operator+(BinaryNumber n)
@@ -49,10 +72,22 @@ BinaryNumber BinaryNumber::operator+(BinaryNumber n)
 	else
 		n.complement(*this);
 
+	uint64_t trans = 0;
 	for (auto i1 = n.data.begin(), i2 = data.begin();
 		 i1 != n.data.end() & i2 != data.end();
 		 i1++, i2++)
-		*i1 += *i2;
+	{
+		*i1 += *i2 + trans; 
+		if (*i1 >= MAXIMUM_PER_NUMBER)
+		{
+			trans = *i1 / MAXIMUM_PER_NUMBER;
+			*i1 %= MAXIMUM_PER_NUMBER;
+		}
+		else
+			trans = 0;
+	}
+	if (trans != 0)
+		n.add(trans);
 
 	return n;
 }
