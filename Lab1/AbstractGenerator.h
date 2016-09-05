@@ -1,6 +1,6 @@
 #pragma once
+#include <cstdint>
 
-template <size_t capacity = 128>
 class AbstractGenerator
 {
 public:
@@ -8,6 +8,8 @@ public:
 	AbstractGenerator()
 	{
 	}
+
+	virtual uint32_t getByte() = 0;
 
 	virtual ~AbstractGenerator()
 	{

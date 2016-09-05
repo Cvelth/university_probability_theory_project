@@ -159,6 +159,7 @@
     <ClCompile Include="gui.cpp" />
     <ClCompile Include="LFSR_superposed.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Register.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="gui.h">
@@ -203,9 +204,11 @@
   <ItemGroup>
     <ClInclude Include="AbstractGenerator.h" />
     <ClInclude Include="BinaryNumber.h" />
+    <ClInclude Include="cGenerator.h" />
     <ClInclude Include="GeneratedFiles\ui_gui.h" />
     <ClInclude Include="LFSR_superposed.h" />
     <ClInclude Include="Polynomial.h" />
+    <ClInclude Include="Register.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="gui.qrc">

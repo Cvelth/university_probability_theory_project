@@ -48,6 +48,9 @@
     <ClCompile Include="BinaryNumber.cpp">
       <Filter>Generator\Addition</Filter>
     </ClCompile>
+    <ClCompile Include="Register.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="gui.ui">
@@ -75,6 +78,12 @@
     </ClInclude>
     <ClInclude Include="BinaryNumber.h">
       <Filter>Generator\Addition</Filter>
+    </ClInclude>
+    <ClInclude Include="Register.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cGenerator.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

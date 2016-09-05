@@ -1,6 +1,6 @@
 #include "gui.h"
 #include <QtWidgets/QApplication>
-#include "BinaryNumber.h"
+#include "cGenerator.h"
 
 /* Qt_main
 int main(int argc, char *argv[])
@@ -15,8 +15,7 @@ int main(int argc, char *argv[])
 // Testing main
 int main()
 {
-	BinaryNumber a { 123,15,17,89 }, b { 19,15,88,20,99 };
-	BinaryNumber c = a & b;
+	CGenerator g;
 
 	return 0;
 }
