@@ -137,6 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BinaryNumber.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_gui.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
@@ -201,6 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractGenerator.h" />
+    <ClInclude Include="BinaryNumber.h" />
     <ClInclude Include="GeneratedFiles\ui_gui.h" />
     <ClInclude Include="LFSR_superposed.h" />
     <ClInclude Include="Polynomial.h" />

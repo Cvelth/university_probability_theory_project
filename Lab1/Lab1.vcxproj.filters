@@ -45,6 +45,9 @@
     <ClCompile Include="LFSR_superposed.cpp">
       <Filter>Generator</Filter>
     </ClCompile>
+    <ClCompile Include="BinaryNumber.cpp">
+      <Filter>Generator\Addition</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="gui.ui">
@@ -68,6 +71,9 @@
       <Filter>Generator</Filter>
     </ClInclude>
     <ClInclude Include="Polynomial.h">
+      <Filter>Generator\Addition</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryNumber.h">
       <Filter>Generator\Addition</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,6 @@
 #include "gui.h"
 #include <QtWidgets/QApplication>
-#include "Polynomial.h"
+#include "BinaryNumber.h"
 
 /* Qt_main
 int main(int argc, char *argv[])
@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 // Testing main
 int main()
 {
-	Polynomial p;
-	p.generate(6);
+	BinaryNumber a { 0b1010,0b0000,0b1111,0b1010 };
+	std::string s = a.print();
 
 	return 0;
 }
