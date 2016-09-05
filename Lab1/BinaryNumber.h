@@ -7,7 +7,7 @@ class BoundsException {};
 
 class BinaryNumber
 {
-	const size_t BITS_PER_NUMBER = 31;
+	const size_t BITS_PER_NUMBER = 1;
 	const uint64_t MAXIMUM_PER_NUMBER = pow(2, BITS_PER_NUMBER);
 	std::deque<uint64_t> data;
 
@@ -23,6 +23,8 @@ public:
 
 	BinaryNumber operator=(BinaryNumber n);
 	BinaryNumber operator+(BinaryNumber n);
+	BinaryNumber operator&(BinaryNumber n);
+	BinaryNumber operator|(BinaryNumber n);
 
 	bool operator[](size_t el);
 	std::string print();

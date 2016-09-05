@@ -77,7 +77,7 @@ BinaryNumber BinaryNumber::operator+(BinaryNumber n)
 		 i1 != n.data.end() & i2 != data.end();
 		 i1++, i2++)
 	{
-		*i1 += *i2 + trans; 
+		*i1 += *i2 + trans;
 		if (*i1 >= MAXIMUM_PER_NUMBER)
 		{
 			trans = *i1 / MAXIMUM_PER_NUMBER;
@@ -90,6 +90,22 @@ BinaryNumber BinaryNumber::operator+(BinaryNumber n)
 		n.add(trans);
 
 	return n;
+}
+
+BinaryNumber BinaryNumber::operator&(BinaryNumber n)
+{
+	for (std::deque<uint64_t>::iterator i1 = n.data.begin(), i2 = data.begin();
+		 i1 != n.data.end() & i2 != data.end(); i1++, i2++)
+		*i1 &= *i2;
+	return n;
+}
+
+BinaryNumber BinaryNumber::operator|(BinaryNumber n)
+{
+	for (std::deque<uint64_t>::iterator i1 = n.data.begin(), i2 = data.begin();
+		 i1 != n.data.end() & i2 != data.end(); i1++, i2++)
+		*i1 |= *i2;
+		return n;
 }
 
 bool BinaryNumber::operator[](size_t el)
