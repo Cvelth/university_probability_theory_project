@@ -22,6 +22,9 @@
     <Filter Include="Generator">
       <UniqueIdentifier>{2de1232f-6ca7-4d2b-a15f-1df479174b30}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Generator\Addition">
+      <UniqueIdentifier>{21035d8b-2a49-4806-9fa3-47bf4de3a993}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\Debug\moc_gui.cpp">
@@ -38,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="LFSR_superposed.cpp">
+      <Filter>Generator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +63,12 @@
     </ClInclude>
     <ClInclude Include="AbstractGenerator.h">
       <Filter>Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="LFSR_superposed.h">
+      <Filter>Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="Polynomial.h">
+      <Filter>Generator\Addition</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

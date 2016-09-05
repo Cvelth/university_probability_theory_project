@@ -156,6 +156,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="gui.cpp" />
+    <ClCompile Include="LFSR_superposed.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +202,8 @@
   <ItemGroup>
     <ClInclude Include="AbstractGenerator.h" />
     <ClInclude Include="GeneratedFiles\ui_gui.h" />
+    <ClInclude Include="LFSR_superposed.h" />
+    <ClInclude Include="Polynomial.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="gui.qrc">
