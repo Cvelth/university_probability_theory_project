@@ -1,5 +1,6 @@
 #pragma once
 #include <set>
+#include "Bit.h"
 
 class Polynomial
 {
@@ -29,6 +30,11 @@ public:
 				ones.insert(i);
 		ones.insert(size);
 		return this;
+	}
+	
+	bool contains(size_t p) const
+	{
+		return ones.find(p) != ones.end();
 	}
 
 	~Polynomial() {	}

@@ -13,7 +13,7 @@ public:
 	{		
 	}
 	
-	uint32_t getByte()
+	uint8_t getByte()
 	{
 		return generator();
 	}

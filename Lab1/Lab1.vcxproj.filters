@@ -25,6 +25,9 @@
     <Filter Include="Generator\Addition">
       <UniqueIdentifier>{21035d8b-2a49-4806-9fa3-47bf4de3a993}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Testing">
+      <UniqueIdentifier>{96dce492-c2fe-49a0-a7db-b4b226ad376b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\Debug\moc_gui.cpp">
@@ -49,6 +52,12 @@
       <Filter>Generator\Addition</Filter>
     </ClCompile>
     <ClCompile Include="Register.cpp">
+      <Filter>Generator\Addition</Filter>
+    </ClCompile>
+    <ClCompile Include="LFSR_spreaded.cpp">
+      <Filter>Generator</Filter>
+    </ClCompile>
+    <ClCompile Include="FrequencyTest.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -79,14 +88,31 @@
     <ClInclude Include="BinaryNumber.h">
       <Filter>Generator\Addition</Filter>
     </ClInclude>
-    <ClInclude Include="Register.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="cGenerator.h">
+      <Filter>Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="Register.h">
+      <Filter>Generator\Addition</Filter>
+    </ClInclude>
+    <ClInclude Include="LFSR_spreaded.h">
+      <Filter>Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="Bit.h">
+      <Filter>Generator\Addition</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractTest.h">
+      <Filter>Testing</Filter>
+    </ClInclude>
+    <ClInclude Include="FrequencyTest.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Lab1.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="sequence.txt">
+      <Filter>Testing</Filter>
+    </Text>
   </ItemGroup>
 </Project>

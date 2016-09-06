@@ -138,6 +138,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BinaryNumber.cpp" />
+    <ClCompile Include="FrequencyTest.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_gui.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
@@ -157,6 +158,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="gui.cpp" />
+    <ClCompile Include="LFSR_spreaded.cpp" />
     <ClCompile Include="LFSR_superposed.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Register.cpp" />
@@ -203,9 +205,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractGenerator.h" />
+    <ClInclude Include="AbstractTest.h" />
     <ClInclude Include="BinaryNumber.h" />
+    <ClInclude Include="Bit.h" />
     <ClInclude Include="cGenerator.h" />
+    <ClInclude Include="FrequencyTest.h" />
     <ClInclude Include="GeneratedFiles\ui_gui.h" />
+    <ClInclude Include="LFSR_spreaded.h" />
     <ClInclude Include="LFSR_superposed.h" />
     <ClInclude Include="Polynomial.h" />
     <ClInclude Include="Register.h" />
@@ -232,6 +238,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Lab1.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="sequence.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
