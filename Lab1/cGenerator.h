@@ -3,7 +3,7 @@
 #include <random>
 #include <functional>
 
-class CGenerator :	public virtual AbstractGenerator
+class CGenerator : public AbstractGenerator
 {
 	std::random_device generator;
 
@@ -13,9 +13,13 @@ public:
 	{		
 	}
 	
-	uint8_t getByte()
+	uint8_t getByte() 
 	{
 		return generator();
+	}
+	Bit getBit() 
+	{
+		return Bit(generator());
 	}
 
 	~CGenerator()

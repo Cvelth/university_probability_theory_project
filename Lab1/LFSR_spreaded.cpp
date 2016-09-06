@@ -13,6 +13,11 @@ uint8_t LFSR_spreaded::getByte()
 	return uint8_t();
 }
 
+Bit LFSR_spreaded::getBit()
+{
+	return step();
+}
+
 Bit LFSR_spreaded::step()
 {
 	return reg << poly;

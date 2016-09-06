@@ -12,7 +12,7 @@ void Register::setRandom(AbstractGenerator* gen)
 
 Bit Register::operator<<(const Polynomial & p)
 {
-	Bit last = at(size() - 1), save = last;
+	Bit last = at(size() - 1), save = 0u;
 	for (size_t i = 0; i < size(); i++)
 	{
 		Bit t = at(i);

@@ -18,11 +18,12 @@ int main(int argc, char *argv[])
 // Testing main
 int main()
 {
-	LFSR_spreaded g(8);
+	LFSR_spreaded g(7);
+	//CGenerator g;
 
 	std::ofstream f("sequence.txt");
 	for (int i = 0; i < 100000; i++)
-		f << Bit(g.step());
+		f << Bit(g.getBit());
 	f.close();
 
 	FrequencyTest ts;
