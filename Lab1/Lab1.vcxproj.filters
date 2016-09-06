@@ -55,7 +55,10 @@
       <Filter>Generator</Filter>
     </ClCompile>
     <ClCompile Include="FrequencyTest.cpp">
-      <Filter>Generated Files</Filter>
+      <Filter>Testing</Filter>
+    </ClCompile>
+    <ClCompile Include="DifferentialTest.cpp">
+      <Filter>Testing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,7 +101,10 @@
       <Filter>Testing</Filter>
     </ClInclude>
     <ClInclude Include="FrequencyTest.h">
-      <Filter>Generated Files</Filter>
+      <Filter>Testing</Filter>
+    </ClInclude>
+    <ClInclude Include="DifferentialTest.h">
+      <Filter>Testing</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@
 #include "LFSR_spreaded.h"
 #include <fstream>
 #include "cGenerator.h"
-#include "FrequencyTest.h"
+#include "DifferentialTest.h"
 
 /* Qt_main
 int main(int argc, char *argv[])
@@ -26,7 +26,7 @@ int main()
 		f << Bit(g.getBit());
 	f.close();
 
-	FrequencyTest ts;
+	DifferentialTest ts;
 	ts.setSequence(std::ifstream("sequence.txt"));
 
 	long double d = ts.test();

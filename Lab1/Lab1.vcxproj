@@ -138,6 +138,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BinaryNumber.cpp" />
+    <ClCompile Include="DifferentialTest.cpp" />
     <ClCompile Include="FrequencyTest.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_gui.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -208,6 +209,7 @@
     <ClInclude Include="BinaryNumber.h" />
     <ClInclude Include="Bit.h" />
     <ClInclude Include="cGenerator.h" />
+    <ClInclude Include="DifferentialTest.h" />
     <ClInclude Include="FrequencyTest.h" />
     <ClInclude Include="GeneratedFiles\ui_gui.h" />
     <ClInclude Include="LFSR_spreaded.h" />
