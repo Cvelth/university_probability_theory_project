@@ -3,6 +3,7 @@
 #include "TableGenerator.h"
 #include <fstream>
 #include "DifferentialTest.h"
+#include "NonlinearTest.h"
 
 /* Qt_main
 int main(int argc, char *argv[])
@@ -23,7 +24,8 @@ int main()
 	for (int i = 0; i < 15000; i++)
 		v.push_back(g.getBit());
 	
-	DifferentialTest ts;
+	//DifferentialTest ts;
+	NonlinearTest ts;
 	ts.setSequence(v);
 
 	long double d = ts.test();
