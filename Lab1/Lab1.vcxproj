@@ -162,6 +162,7 @@
     <ClCompile Include="LFSR_spreaded.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Register.cpp" />
+    <ClCompile Include="TableGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="gui.h">
@@ -215,6 +216,8 @@
     <ClInclude Include="LFSR_spreaded.h" />
     <ClInclude Include="Polynomial.h" />
     <ClInclude Include="Register.h" />
+    <ClInclude Include="Table.h" />
+    <ClInclude Include="TableGenerator.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="gui.qrc">
@@ -241,6 +244,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="sequence.txt" />
+    <Text Include="Table.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

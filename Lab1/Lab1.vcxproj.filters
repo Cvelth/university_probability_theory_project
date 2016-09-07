@@ -60,6 +60,9 @@
     <ClCompile Include="DifferentialTest.cpp">
       <Filter>Testing</Filter>
     </ClCompile>
+    <ClCompile Include="TableGenerator.cpp">
+      <Filter>Generator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="gui.ui">
@@ -106,6 +109,12 @@
     <ClInclude Include="DifferentialTest.h">
       <Filter>Testing</Filter>
     </ClInclude>
+    <ClInclude Include="TableGenerator.h">
+      <Filter>Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.h">
+      <Filter>Generator\Addition</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Lab1.rc" />
@@ -113,6 +122,9 @@
   <ItemGroup>
     <Text Include="sequence.txt">
       <Filter>Testing</Filter>
+    </Text>
+    <Text Include="Table.txt">
+      <Filter>Generator\Addition</Filter>
     </Text>
   </ItemGroup>
 </Project>

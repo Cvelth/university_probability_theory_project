@@ -7,7 +7,7 @@ Register::Register()
 void Register::setRandom(AbstractGenerator* gen)
 {
 	for (int i = 0; i < size(); i++)
-		at(i) = (*gen)(); //Using operator()()
+		at(i) = gen->getBit();
 }
 
 Bit Register::operator<<(const Polynomial & p)

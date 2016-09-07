@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 class Bit
 {
 	bool b;
@@ -15,6 +16,11 @@ public:
 	Bit(uint8_t a)
 	{
 		b = (a > UINT8_MAX / 2) ? 1 : 0;
+	}
+
+	Bit(uint64_t a)
+	{
+		b = (a > UINT64_MAX / 2) ? 1 : 0;
 	}
 
 	Bit(unsigned int a) //16 bit one(I presume)

@@ -1,8 +1,7 @@
 #include "gui.h"
 #include <QtWidgets/QApplication>
-#include "LFSR_spreaded.h"
+#include "TableGenerator.h"
 #include <fstream>
-#include "cGenerator.h"
 #include "DifferentialTest.h"
 
 /* Qt_main
@@ -18,18 +17,21 @@ int main(int argc, char *argv[])
 // Testing main
 int main()
 {
-	LFSR_spreaded g(7);
+	//TableGenerator g(12, 8, (new Table())->load());
+	TableGenerator g(12, 8);
 	//CGenerator g;
+	//LFSR_spreaded g(8);
 
 	std::ofstream f("sequence.txt");
-	for (int i = 0; i < 100000; i++)
+	for (int i = 0; i < 15000; i++)
 		f << Bit(g.getBit());
 	f.close();
-
+	
 	DifferentialTest ts;
 	ts.setSequence(std::ifstream("sequence.txt"));
 
 	long double d = ts.test();
+	
 
 	return 0;
 }
