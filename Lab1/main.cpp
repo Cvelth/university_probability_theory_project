@@ -17,21 +17,16 @@ int main(int argc, char *argv[])
 // Testing main
 int main()
 {
-	//TableGenerator g(12, 8, (new Table())->load());
 	TableGenerator g(12, 8);
-	//CGenerator g;
-	//LFSR_spreaded g(8);
 
-	std::ofstream f("sequence.txt");
+	std::vector<Bit> v;
 	for (int i = 0; i < 15000; i++)
-		f << Bit(g.getBit());
-	f.close();
+		v.push_back(g.getBit());
 	
 	DifferentialTest ts;
-	ts.setSequence(std::ifstream("sequence.txt"));
+	ts.setSequence(v);
 
 	long double d = ts.test();
 	
-
 	return 0;
 }
