@@ -85,9 +85,6 @@
     <ClInclude Include="AbstractGenerator.h">
       <Filter>Generator</Filter>
     </ClInclude>
-    <ClInclude Include="Polynomial.h">
-      <Filter>Generator\Addition</Filter>
-    </ClInclude>
     <ClInclude Include="BinaryNumber.h">
       <Filter>Generator\Addition</Filter>
     </ClInclude>

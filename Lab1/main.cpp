@@ -2,6 +2,7 @@
 #include <QtWidgets/QApplication>
 #include "TableGenerator.h"
 #include <fstream>
+#include "FrequencyTest.h"
 #include "DifferentialTest.h"
 #include "NonlinearTest.h"
 
@@ -23,9 +24,9 @@ int main()
 	std::vector<Bit> v;
 	for (int i = 0; i < 15000; i++)
 		v.push_back(g.getBit());
-	
-	//DifferentialTest ts;
+
 	DifferentialTest ts;
+	//FrequencyTest ts;
 	ts.setSequence(v);
 
 	long double d = ts.test();

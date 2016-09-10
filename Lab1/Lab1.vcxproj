@@ -216,7 +216,6 @@
     <ClInclude Include="GeneratedFiles\ui_gui.h" />
     <ClInclude Include="LFSR_spreaded.h" />
     <ClInclude Include="NonlinearTest.h" />
-    <ClInclude Include="Polynomial.h" />
     <ClInclude Include="Register.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="TableGenerator.h" />
