@@ -13,10 +13,10 @@ std::string NonlinearTest::test()
 	return s.str();
 }
 
-uint64_t NonlinearTest::test(size_t n)
+bool NonlinearTest::test(uint64_t n)
 {
 	//To_develop!
-	return 0ull;
+	return false;
 }
 
 NonlinearTest::~NonlinearTest()

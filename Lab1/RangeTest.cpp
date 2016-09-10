@@ -1,7 +1,5 @@
 #include "RangeTest.h"
 
-
-
 RangeTest::RangeTest()
 {
 }

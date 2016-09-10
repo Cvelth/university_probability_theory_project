@@ -2,15 +2,17 @@
 #include "AbstractTest.h"
 #include <map>
 
+using iPair = std::pair<uint64_t, uint16_t>;
+
 class NonlinearTest : public AbstractTest
 {
-	std::map<uint64_t, bool> s;
+	std::map<uint64_t, bool> m;
 public:
 	NonlinearTest();
 
 	std::string test();
 
-	uint64_t test(size_t n);
+	bool test(size_t n);
 
 	~NonlinearTest();
 };
