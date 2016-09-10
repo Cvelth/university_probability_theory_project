@@ -25,7 +25,7 @@ int main()
 		v.push_back(g.getBit());
 	
 	//DifferentialTest ts;
-	NonlinearTest ts;
+	DifferentialTest ts;
 	ts.setSequence(v);
 
 	long double d = ts.test();
