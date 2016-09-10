@@ -64,7 +64,10 @@
       <Filter>Generator</Filter>
     </ClCompile>
     <ClCompile Include="NonlinearTest.cpp">
-      <Filter>Generated Files</Filter>
+      <Filter>Testing</Filter>
+    </ClCompile>
+    <ClCompile Include="RangeTest.cpp">
+      <Filter>Testing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,7 +119,10 @@
       <Filter>Generator\Addition</Filter>
     </ClInclude>
     <ClInclude Include="NonlinearTest.h">
-      <Filter>Generated Files</Filter>
+      <Filter>Testing</Filter>
+    </ClInclude>
+    <ClInclude Include="RangeTest.h">
+      <Filter>Testing</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

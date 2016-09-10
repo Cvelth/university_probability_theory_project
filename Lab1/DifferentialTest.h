@@ -5,7 +5,7 @@ class DifferentialTest : public AbstractTest
 public:
 	DifferentialTest();
 
-	long double test();
+	std::string test();
 
 	~DifferentialTest();
 };

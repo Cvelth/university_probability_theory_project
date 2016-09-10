@@ -162,6 +162,7 @@
     <ClCompile Include="LFSR_spreaded.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NonlinearTest.cpp" />
+    <ClCompile Include="RangeTest.cpp" />
     <ClCompile Include="Register.cpp" />
     <ClCompile Include="TableGenerator.cpp" />
   </ItemGroup>
@@ -216,6 +217,7 @@
     <ClInclude Include="GeneratedFiles\ui_gui.h" />
     <ClInclude Include="LFSR_spreaded.h" />
     <ClInclude Include="NonlinearTest.h" />
+    <ClInclude Include="RangeTest.h" />
     <ClInclude Include="Register.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="TableGenerator.h" />

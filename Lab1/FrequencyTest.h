@@ -5,7 +5,7 @@ class FrequencyTest : public AbstractTest
 public:
 	FrequencyTest();
 
-	long double test();
+	std::string test();
 
 	~FrequencyTest();
 };

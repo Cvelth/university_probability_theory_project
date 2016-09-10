@@ -1,17 +1,17 @@
 #include "FrequencyTest.h"
 
-
-
 FrequencyTest::FrequencyTest()
 {
 }
 
-long double FrequencyTest::test()
+std::string FrequencyTest::test()
 {
-	long double c = 0.0l;
+	double c = 0.0;
 	for each (auto var in v)
 		c += var;
-	return c / v.size();
+	std::ostringstream s;
+	s << c / v.size();
+	return s.str();
 }
 
 

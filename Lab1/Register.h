@@ -30,8 +30,6 @@ class Register
 	
 protected:
 	Bit last();
-	Bit left1(const Polynomial& p);
-	Bit left2(const Polynomial& p);
 
 public:
 	Register(size_t size = 32);

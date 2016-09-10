@@ -6,12 +6,14 @@ DifferentialTest::DifferentialTest()
 {
 }
 
-long double DifferentialTest::test()
+std::string DifferentialTest::test()
 {
 	long double c = 0.0l;
 	for (size_t i = 2; i < v.size(); i++)
 		c += v[i] ^ v[i - 1];
-	return c / (v.size() - 1);
+	std::ostringstream s;
+	s << c / (v.size() - 1);
+	return s.str();
 }
 
 

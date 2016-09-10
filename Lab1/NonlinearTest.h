@@ -8,7 +8,7 @@ class NonlinearTest : public AbstractTest
 public:
 	NonlinearTest();
 
-	long double test();
+	std::string test();
 
 	uint64_t test(size_t n);
 
