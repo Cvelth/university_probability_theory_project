@@ -215,6 +215,7 @@
     <ClInclude Include="DifferentialTest.h" />
     <ClInclude Include="FrequencyTest.h" />
     <ClInclude Include="GeneratedFiles\ui_gui.h" />
+    <ClInclude Include="Generator_incluse.h" />
     <ClInclude Include="LFSR_spreaded.h" />
     <ClInclude Include="NonlinearTest.h" />
     <ClInclude Include="RangeTest.h" />

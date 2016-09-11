@@ -10,9 +10,9 @@ class NonlinearTest : public AbstractTest
 public:
 	NonlinearTest();
 
-	std::string test();
+	std::string test(size_t t = 4);
 
-	bool test(size_t n);
+	bool test(size_t n,int i);
 
 	~NonlinearTest();
 };

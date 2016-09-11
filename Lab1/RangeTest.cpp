@@ -1,12 +1,16 @@
 #include "RangeTest.h"
 
-RangeTest::RangeTest()
+std::string RangeTest::binary(uint64_t a)
 {
+	std::string r = "";
+	do
+		r = ((a % 2) ? '1' : '0') + r;
+	while (a /= 2);
+	return r;
 }
 
-std::string RangeTest::test()
+RangeTest::RangeTest()
 {
-	return test(4);
 }
 
 std::string RangeTest::test(size_t size)
@@ -24,7 +28,7 @@ std::string RangeTest::test(size_t size)
 	}
 
 	for each(auto var in m)
-		s << var.first << '\t' << var.second << std::endl;
+		s << binary(var.first) << '\t' << var.second << std::endl;
 	return s.str();
 }
 

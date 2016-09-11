@@ -19,7 +19,6 @@ TableGenerator::TableGenerator(size_t RegNum, size_t RegSize, AbstractGenerator*
 
 void TableGenerator::newTable(AbstractGenerator * gen)
 {
-	delete tbl;
 	tbl = new Table();
 	tbl->generate(1ull << RegNum, gen);
 }

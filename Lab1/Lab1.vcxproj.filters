@@ -124,6 +124,7 @@
     <ClInclude Include="RangeTest.h">
       <Filter>Testing</Filter>
     </ClInclude>
+    <ClInclude Include="Generator_incluse.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Lab1.rc" />

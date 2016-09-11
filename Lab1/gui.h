@@ -1,8 +1,11 @@
 #ifndef GUI_H
 #define GUI_H
 
+#include "Generator_incluse.h"
 #include <QtWidgets/QWidget>
 #include "ui_gui.h"
+
+class IncorrectInputException {};
 
 class GUI : public QWidget
 {
@@ -12,8 +15,24 @@ public:
 	GUI(QWidget *parent = 0);
 	~GUI();
 
+protected:
+	QString bit(Bit b);
+
 private:
 	Ui::GUIClass ui;
+	AbstractGenerator* g;
+	AbstractTest* t;
+
+protected slots:
+	void clear();
+	void generate();
+	void test();
+
+	void rb1();
+	void rb2();
+	void rb3();
+	void rbOn();
+	void rbOff();
 };
 
 #endif // GUI_H

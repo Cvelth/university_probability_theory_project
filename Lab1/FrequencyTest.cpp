@@ -4,7 +4,7 @@ FrequencyTest::FrequencyTest()
 {
 }
 
-std::string FrequencyTest::test()
+std::string FrequencyTest::test(size_t t)
 {
 	double c = 0.0;
 	for each (auto var in v)

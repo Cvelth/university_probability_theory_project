@@ -26,7 +26,7 @@ public:
 		v = d;
 	}
 
-	virtual std::string test() = 0;
+	virtual std::string test(size_t t = 4) = 0;
 
 	virtual ~AbstractTest()
 	{

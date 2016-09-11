@@ -6,7 +6,7 @@ DifferentialTest::DifferentialTest()
 {
 }
 
-std::string DifferentialTest::test()
+std::string DifferentialTest::test(size_t t)
 {
 	long double c = 0.0l;
 	for (size_t i = 2; i < v.size(); i++)
