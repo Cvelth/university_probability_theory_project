@@ -2,7 +2,7 @@
 #include "AbstractTest.h"
 #include <map>
 
-using iPair = std::pair<uint64_t, uint16_t>;
+using bPair = std::pair<uint64_t, bool>;
 
 class NonlinearTest : public AbstractTest
 {

@@ -26,9 +26,10 @@ int main()
 	for (int i = 0; i < 15000; i++)
 		v.push_back(g.getBit());
 
-	//DifferentialTest ts;
 	//FrequencyTest ts;
-	RangeTest ts;
+	//DifferentialTest ts;
+	//RangeTest ts;
+	NonlinearTest ts;
 	ts.setSequence(v);
 
 	std::string s = ts.test();
