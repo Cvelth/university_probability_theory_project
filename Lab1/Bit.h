@@ -33,6 +33,11 @@ public:
 		return a.b != b;
 	}
 
+	Bit operator==(Bit a)
+	{
+		return a.b == b;
+	}
+
 	operator bool()
 	{
 		return b;

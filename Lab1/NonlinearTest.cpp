@@ -1,12 +1,23 @@
 #include "NonlinearTest.h"
 
+size_t NonlinearTest::start()
+{
+	size_t t = 1, max = 1;
+	for (int i = 0; i < v.size() - 1; i++)
+		if (v[i] == v[i + 1])
+			max = ++t > max ? t : max;
+		else
+			t = 1;
+	return max;
+}
+
 NonlinearTest::NonlinearTest()
 {
 }
 
 std::string NonlinearTest::test(size_t t)
 {
-	uint64_t i = 1;
+	uint64_t i = start();
 	while (!test(i++, 0));
 	std::ostringstream s;
 	s << i;
