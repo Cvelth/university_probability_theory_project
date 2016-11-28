@@ -71,16 +71,14 @@
     <CustomBuild Include="Graphs.hpp">
       <Filter>GUI</Filter>
     </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="GeneratedFiles\ui_gui.h">
+    <CustomBuild Include="GeneratedFiles\ui_gui.h">
       <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CustomLawGenerator.hpp">
+    </CustomBuild>
+    <CustomBuild Include="CustomLawGenerator.hpp">
       <Filter>Generator</Filter>
-    </ClInclude>
-    <ClInclude Include="Pair.hpp">
+    </CustomBuild>
+    <CustomBuild Include="Pair.hpp">
       <Filter>Generator</Filter>
-    </ClInclude>
+    </CustomBuild>
   </ItemGroup>
 </Project>
