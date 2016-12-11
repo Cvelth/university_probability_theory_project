@@ -9,9 +9,11 @@ private:
 	size_t m_id;
 	Point m_c;
 
+	float m_q;
+
 	static size_t ID;
 public:
-	explicit Node(Point p = Point()) : Node(p, ID++) {};
+	explicit Node(Point p = Point(), float q = 0.f) : Node(p, q, ID++) {};
 
 	size_t id() {
 		return m_id;
@@ -26,12 +28,20 @@ public:
 		return m_c;
 	}
 
+	float q() {
+		return m_q;
+	}
+
+	void q(float _q) {
+		m_q += _q;
+	}
+
 	bool operator<(const Node& n);
 	bool operator==(const Node& n);
 
 	static void initializeNodding();
 protected:
-	Node(Point p, size_t id) : m_c(p), m_id(id) {};
+	Node(Point p, float q, size_t id) : m_c(p), m_q(q), m_id(id) {};
 };
 
 class Link {
@@ -39,6 +49,8 @@ private:
 	Node* m_f;
 	Node* m_s;
 	float m_v;
+	float m_q;
+
 public:
 	explicit Link(Node* f, Node* s);
 	explicit Link(Node* f, Node* s, float _v);
@@ -46,8 +58,10 @@ public:
 	Node* b();
 	Node* e();
 	float v();
+	float q();
 
-	void v(float v);
+	void q(float _q);
+	void v(float _v);
 };
 
 class Graph {
@@ -64,4 +78,7 @@ public:
 	bool isNode(const Point& p);
 	Node* findNode(const Point& p);
 	Link* findLink(const Point& b, const Point& e);
+
+protected:
+	void changeWeights(Link* l, float q);
 };

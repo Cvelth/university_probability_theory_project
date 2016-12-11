@@ -45,6 +45,14 @@ void Link::v(float v) {
 		m_v = v;
 }
 
+float Link::q() {
+	return m_q;
+}
+
+void Link::q(float _q) {
+	m_q = _q;
+}
+
 void Graph::add(Node* n) {
 	m_nodes.insert(n);
 }
@@ -85,4 +93,14 @@ Link* Graph::findLink(const Point & b, const Point & e) {
 		if (*bn == *l->b() && *en == *l->e())
 			return l;
 	return nullptr;
+}
+
+void Graph::changeWeights(Link* _l, float _q) {
+	_l->q(_q);
+
+	Node* n = _l->b();
+	n->q(_q);
+	for (Link* l : m_links)
+		if (*l->b() == *n)
+			l->v(l->q() / n->q());
 }

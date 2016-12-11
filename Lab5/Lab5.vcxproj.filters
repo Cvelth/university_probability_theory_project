@@ -66,6 +66,15 @@
     <ClCompile Include="Graph.cpp">
       <Filter>Graph</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_VisualGraph.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualGraph.cpp">
+      <Filter>Visualization</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_VisualGraph.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="GUI.h">
@@ -77,6 +86,9 @@
     <CustomBuild Include="GUI.qrc">
       <Filter>GUI</Filter>
     </CustomBuild>
+    <CustomBuild Include="VisualGraph.hpp">
+      <Filter>Visualization</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_GUI.h">
@@ -87,9 +99,6 @@
     </ClInclude>
     <ClInclude Include="Graph.hpp">
       <Filter>Graph</Filter>
-    </ClInclude>
-    <ClInclude Include="VisualGraph.hpp">
-      <Filter>Visualization</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
