@@ -99,5 +99,8 @@
     <None Include="FragmentShader.glsl">
       <Filter>Visualization</Filter>
     </None>
+    <None Include="OpacityShader.glsl">
+      <Filter>Visualization</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -38,10 +38,16 @@ class Link {
 private:
 	Node* m_f;
 	Node* m_s;
+	float m_v;
 public:
 	explicit Link(Node* f, Node* s);
+	explicit Link(Node* f, Node* s, float _v);
+	~Link() {}
 	Node* b();
 	Node* e();
+	float v();
+
+	void v(float v);
 };
 
 class Graph {
@@ -57,4 +63,5 @@ public:
 	
 	bool isNode(const Point& p);
 	Node* findNode(const Point& p);
+	Link* findLink(const Point& b, const Point& e);
 };

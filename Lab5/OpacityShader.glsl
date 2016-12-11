@@ -1,6 +1,7 @@
 #version 430
 
 in layout(location=0) vec2 position;
+in layout(location=1) float opacity;
 
 out vec4 theColor;
 
@@ -9,5 +10,5 @@ uniform mat4 projectionMatrix;
 
 void main() { 
 	gl_Position = projectionMatrix * vec4(position, 0.0, 1.0);
-	theColor = vec4(drawingColor, 1.f);
+	theColor = vec4(drawingColor, opacity);
 }
