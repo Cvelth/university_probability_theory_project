@@ -27,11 +27,9 @@ public:
 	Point p() {
 		return m_c;
 	}
-
 	float q() {
 		return m_q;
 	}
-
 	void q(float _q) {
 		m_q += _q;
 	}
@@ -78,6 +76,8 @@ public:
 	bool isNode(const Point& p);
 	Node* findNode(const Point& p);
 	Link* findLink(const Point& b, const Point& e);
+
+	std::set<Link*>* links() { return &m_links; }
 
 protected:
 	void changeWeights(Link* l, float q);

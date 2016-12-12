@@ -1,12 +1,12 @@
 #include "GUI.h"
 #include <QtWidgets>
-#include <VisualGraph.hpp>
+#include <ProcessGraph.hpp>
 
 GUI::GUI(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	m_graph = new VisualGraph();
+	m_graph = new ProcessGraph();
 	ui.verticalLayout->addWidget(m_graph, 2);
 }
 
@@ -16,11 +16,14 @@ GUI::~GUI() {
 
 WeightDialog::WeightDialog(QWidget *parent) : QDialog(parent) {
 	setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint);
+	setWindowModality(Qt::ApplicationModal);
+
 	if (parent == 0) {
 		setAttribute(Qt::WA_NoSystemBackground, true);
 		setAttribute(Qt::WA_TranslucentBackground, true);
 	}
-
+	setWindowOpacity(0.6);
+	
 	edit = new QLineEdit;
 	layout = new QVBoxLayout;
 	layout->addWidget(edit);

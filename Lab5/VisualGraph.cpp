@@ -2,6 +2,7 @@
 #include <QtWidgets>
 #include <fstream>
 #include <qvector4d.h>
+#include <initializer_list>
 
 VisualGraph::VisualGraph(QWidget* parent)
 	: QOpenGLWidget(parent) {
@@ -13,13 +14,13 @@ VisualGraph::VisualGraph(QWidget* parent)
 void VisualGraph::initializeGL() {
 	initializeOpenGLFunctions();
 	glClearColor(0.1f, 0.f, 0.2f, 1.f);
-	installShaders();
+	linkPrograms();
 
 	glLineWidth(2.f);
 
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
-
+	
 	glEnable(GL_POINT_SMOOTH);
 	glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
 
@@ -32,10 +33,8 @@ void VisualGraph::initializeGL() {
 	glEnableVertexAttribArray(0);
 	glEnableVertexAttribArray(1);
 
-	glGenBuffers(1, &nodesBuffer);
-	glGenBuffers(1, &lineBuffer);
-	glGenBuffers(2, linksBuffer);
-
+	generateBuffers();
+	
 	sendData();
 }
 void VisualGraph::resizeGL(int w, int h) {
@@ -58,6 +57,12 @@ void VisualGraph::paintGL() {
 	if (drawTempLine) {
 		drawTempLink();
 	}
+}
+
+void VisualGraph::generateBuffers() {
+	glGenBuffers(1, &nodesBuffer);
+	glGenBuffers(1, &lineBuffer);
+	glGenBuffers(2, linksBuffer);
 }
 
 void VisualGraph::drawNodes() {
@@ -134,28 +139,31 @@ void VisualGraph::updatePosition(Point p) {
 				 generateTempLink(p), GL_STREAM_DRAW);
 }
 
-void VisualGraph::installShaders() {
+void VisualGraph::linkPrograms() {
 	GLuint fragment = readShader(GL_FRAGMENT_SHADER, "FragmentShader.glsl");
+	GLuint vertex = readShader(GL_VERTEX_SHADER, "VertexShader.glsl");
+	GLuint opacity = readShader(GL_VERTEX_SHADER, "OpacityShader.glsl");
 
-	program = glCreateProgram();
-	glAttachShader(program, readShader(GL_VERTEX_SHADER, "VertexShader.glsl"));
-	glAttachShader(program, fragment);
+	program = makeProgram({fragment, vertex});
+	opacityProgram = makeProgram({fragment, opacity});
+}
 
-	opacityProgram = glCreateProgram();
-	glAttachShader(opacityProgram, readShader(GL_VERTEX_SHADER, "OpacityShader.glsl"));
-	glAttachShader(opacityProgram, fragment);
+GLuint VisualGraph::makeProgram(std::initializer_list<GLuint> shaders) {
+	GLuint program = glCreateProgram();
+
+	for (auto shader : shaders)
+		glAttachShader(program, shader);
 
 	glLinkProgram(program);
-	glLinkProgram(opacityProgram);
 
 	GLint status;
 	glGetProgramiv(program, GL_LINK_STATUS, &status);
 	if (!status)
 		throw CompilationOrLinkingError();
-	glGetProgramiv(opacityProgram, GL_LINK_STATUS, &status);
-	if (!status)
-		throw CompilationOrLinkingError();
+
+	return program;
 }
+
 GLuint VisualGraph::readShader(GLenum type, std::string fileName) {
 	GLuint shader = glCreateShader(type);
 	const GLchar* temp[1];
@@ -207,6 +215,19 @@ float* VisualGraph::generateTempLink(Point mousePos) {
 	return res;
 }
 
+void VisualGraph::generateQuad(float* place, size_t& index, Point point, const float shift) {
+	place[index++] = point.x() - shift;
+	place[index++] = point.y();
+					 	  
+	place[index++] = point.x();
+	place[index++] = point.y() + shift;
+					 	  
+	place[index++] = point.x() + shift;
+	place[index++] = point.y();
+					 	  
+	place[index++] = point.x();
+	place[index++] = point.y() - shift;
+}
 void VisualGraph::generateQuad(float* place, size_t& index, Node* node, const float shift) {
 	place[index++] = node->x() - shift;
 	place[index++] = node->y();
@@ -271,39 +292,49 @@ void VisualGraph::mouseMoveEvent(QMouseEvent* e) {
 void VisualGraph::mouseReleaseEvent(QMouseEvent* ev) {
 	drawTempLine = false;
 	Point thisMousePos = translate(ev->pos());
-	if (lastMousePos == thisMousePos) {
-		if (ev->button() == (Qt::MouseButton::LeftButton)) {
-			if (!isNode(thisMousePos)) {
-				add(new Node(thisMousePos));
-				sendNodes();
-			}
-		} else {
-			if (ev->button() == (Qt::MouseButton::RightButton))
-				if (isNode(thisMousePos)) {
-					remove(findNode(thisMousePos));
-					sendNodes();
-					sendLinks();
-				}
-		}
-	} else {
-		if (ev->button() == Qt::MouseButton::LeftButton) {
-			Node* b = findNode(lastMousePos);
-			Node* e = findNode(thisMousePos);
-			if (b && e) {
-				currentLink = new Link(b, e, 1.f);
-				add(currentLink);
-				sendLinks();
-				emit showDialog(ev->globalX(), ev->globalY());
-			}
-		} else if (ev->button() == Qt::MouseButton::RightButton) {
-			Link* l = findLink(lastMousePos, thisMousePos);
-			if (l) {
-				remove(l);
-				sendLinks();
-			}
-		}
-	}
+	if (lastMousePos == thisMousePos)
+		if (ev->button() == Qt::MouseButton::LeftButton)
+			leftMouseButtonClick(thisMousePos, ev);
+		else if (ev->button() == Qt::MouseButton::RightButton)
+			rightMouseButtonClick(thisMousePos, ev);
+	else 
+		if (ev->button() == Qt::MouseButton::LeftButton) 
+			leftMouseButtonSwipe(thisMousePos, ev);
+		else if (ev->button() == Qt::MouseButton::RightButton)
+			rightMouseButtonSwipe(thisMousePos, ev);
+
 	update();
+}
+
+void VisualGraph::leftMouseButtonClick(Point mousePos, QMouseEvent* ev) {
+	if (!isNode(mousePos)) {
+		add(new Node(mousePos));
+		sendNodes();
+	}
+}
+void VisualGraph::rightMouseButtonClick(Point mousePos, QMouseEvent* ev) {
+	if (isNode(mousePos)) {
+		remove(findNode(mousePos));
+		sendNodes();
+		sendLinks();
+	}
+}
+void VisualGraph::leftMouseButtonSwipe(Point mousePos, QMouseEvent* ev) {
+	Node* b = findNode(lastMousePos);
+	Node* e = findNode(mousePos);
+	if (b && e) {
+		currentLink = new Link(b, e, 1.f);
+		add(currentLink);
+		sendLinks();
+		emit showDialog(ev->globalX(), ev->globalY());
+	}
+}
+void VisualGraph::rightMouseButtonSwipe(Point mousePos, QMouseEvent* ev) {
+	Link* l = findLink(lastMousePos, mousePos);
+	if (l) {
+		remove(l);
+		sendLinks();
+	}
 }
 
 Point VisualGraph::translate(QPoint p) {

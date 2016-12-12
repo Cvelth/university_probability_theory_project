@@ -43,6 +43,9 @@
     <Filter Include="Visualization">
       <UniqueIdentifier>{221af710-cc29-4f45-854c-b949a3ed3c06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Process">
+      <UniqueIdentifier>{babfe173-e1bd-4596-b86a-0668186a5bcd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -75,6 +78,12 @@
     <ClCompile Include="GeneratedFiles\Release\moc_VisualGraph.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="TravelingPoint.cpp">
+      <Filter>Process</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessGraph.cpp">
+      <Filter>Process</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="GUI.h">
@@ -99,6 +108,12 @@
     </ClInclude>
     <ClInclude Include="Graph.hpp">
       <Filter>Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessGraph.hpp">
+      <Filter>Process</Filter>
+    </ClInclude>
+    <ClInclude Include="TravelingPoint.hpp">
+      <Filter>Process</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

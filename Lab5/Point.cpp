@@ -9,6 +9,12 @@ Point Point::operator+(const Point & p) {
 	return Point(m_x + p.m_x, m_y + p.m_y);
 }
 
+Point Point::operator+=(const Point & p) {
+	m_x += p.m_x;
+	m_y += p.m_y;
+	return *this;
+}
+
 Point Point::operator-(const Point & p) {
 	return Point(m_x - p.m_x, m_y - p.m_y);
 }
@@ -19,6 +25,10 @@ Point Point::operator=(const Point & p) {
 
 Point Point::operator*(float f) {
 	return Point(m_x * f, m_y * f);
+}
+
+Point Point::operator/(float f) {
+	return Point(m_x / f, m_y / f);
 }
 
 Point Point::center(Point a, Point b) {

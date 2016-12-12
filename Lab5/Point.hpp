@@ -14,10 +14,12 @@ public:
 
 	bool operator==(const Point& p);
 	Point operator+(const Point& p);
+	Point operator+=(const Point& p);
 	Point operator-(const Point& p);
 	Point operator=(const Point& p);
 
 	Point operator*(float f);
+	Point operator/(float f);
 
 	static Point center(Point, Point);
 	float length();

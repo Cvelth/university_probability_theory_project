@@ -3,7 +3,7 @@
 #include <QtWidgets/QDialog>
 #include "ui_GUI.h"
 
-class VisualGraph;
+class ProcessGraph;
 class QLineEdit;
 
 class GUI : public QWidget
@@ -16,7 +16,7 @@ public:
 
 private:
     Ui::GUIClass ui;
-	VisualGraph *m_graph;
+	ProcessGraph *m_graph;
 };
 
 class WeightDialog : public QDialog {
