@@ -78,6 +78,7 @@ public:
 	Link* findLink(const Point& b, const Point& e);
 
 	std::set<Link*>* links() { return &m_links; }
+	std::set<Node*>* nodes() { return &m_nodes; }
 
 protected:
 	void changeWeights(Link* l, float q);

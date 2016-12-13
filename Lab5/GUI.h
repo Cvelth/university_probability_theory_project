@@ -17,6 +17,11 @@ public:
 private:
     Ui::GUIClass ui;
 	ProcessGraph *m_graph;
+
+private slots:
+	void calculate();
+	void theoretical();
+	void practical();
 };
 
 class WeightDialog : public QDialog {
